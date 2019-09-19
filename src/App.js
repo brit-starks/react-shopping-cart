@@ -19,11 +19,13 @@ function App() {
 		setCart([...cart, item]);
 	};
 
+	console.log(products);
+
 	return (
 		<div className="App">
 			<ProductContext.Provider value={{products, addItem}}>
-				<CartContext.Provider value={{cart}}>
-				<Navigation cart={cart} />
+				<CartContext.Provider value={cart}>
+				<Navigation  />
 
 				{/* Routes */}
 				<Route

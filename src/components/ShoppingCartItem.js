@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../contexts/CartContext';
 
 const Item = props => {
+
+	const  cart  = useContext(CartContext);
+	
 	return (
 		<div className="shopping-cart_item">
-			<img src={props.image} alt={`${props.title} book`} />
+			<img src={cart.image} alt={`${cart.title} book`} />
 
 
 			<div>
-				<h1>{props.title}</h1>
-				<p>$ {props.price}</p>
+				<h1>{cart.title}</h1>
+				<p>$ {cart.price}</p>
 				<button>Remove from cart</button>
 			</div>
 		</div>
